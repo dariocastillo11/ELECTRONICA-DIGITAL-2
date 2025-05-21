@@ -1,0 +1,6 @@
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-2.X\5-2.ASM 22 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-2.X\5-2.ASM 23 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-2.X\5-2.ASM 26 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-2.X\5-2.ASM 35 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-2.X\5-2.ASM 58 : Found label after column 1. (loop)
+Message[305] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-2.X\5-2.ASM 77 : Using default destination of 1 (file).

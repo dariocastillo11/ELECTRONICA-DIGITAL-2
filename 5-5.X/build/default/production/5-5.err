@@ -1,0 +1,11 @@
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 21 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 22 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 24 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 25 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 26 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 38 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 43 : Found label after column 1. (MAIN)
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 48 : Found label after column 1. (PARPADEO)
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 74 : Found label after column 1. (PARAR)
+Warning[202] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 133 : Argument out of range.  Least significant bits used.
+Warning[202] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\5-5.X\5-5.ASM 136 : Argument out of range.  Least significant bits used.

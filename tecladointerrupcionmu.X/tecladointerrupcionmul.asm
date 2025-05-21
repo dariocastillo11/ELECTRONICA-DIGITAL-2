@@ -1,0 +1,454 @@
+;################################################################
+	;#PROYECTO:  MULTIPLEXACION CON  DISPLAY DE  SEGMENTOS
+	; AUTOR    : CASTILLO, DARÍO ALBERTO
+	; E-MAIL: DARIO.CASTILLO@MI.UNC.EDU.AR
+	;################################################################
+	LIST P=16F887
+	#INCLUDE "p16F887.inc"
+	__CONFIG _CONFIG1, _FOSC_INTRC_NOCLKOUT & _WDTE_OFF & _MCLRE_ON & _LVP_OFF
+    ; -----------------------------------------------VARIABLES----------------------------------------------------------------------
+    
+COUNT1			EQU		0x20		;CONT 1  Y 2 DE LOS DELAY
+COUNT2			EQU		0x21
+ESTADO			EQU		0x22
+DOBLEV			EQU		0X23
+CLAVE			EQU		0X24	
+UNIDAD			EQU		0X25
+DECENA			EQU		0X26
+CENTENA			EQU		0X27
+	ORG			0X00
+	GOTO			START
+	ORG			0X04
+	GOTO			INTERRUPCION
+	
+	ORG			 0x05
+	
+    ;  ########################################################################################
+START:
+	;-----------------------------------------------CONFIGURACION DE PUERTOS------------------------------------------
+    BANKSEL		ANSEL
+    CLRF		ANSELH
+    MOVLW		B'00000001'
+    MOVWF		ANSEL
+    
+    
+    BANKSEL		TRISA
+    BCF		TRISE,0				 ; PORTE COMO SALIDA
+    BCF		TRISE,1
+    BCF		TRISE,2
+    CLRF		TRISD	;saldia display
+    CLRF		TRISC   
+    MOVLW		B'11110000'
+    MOVWF		TRISB
+    BSF		TRISA,0		;ENTRADA ANALOGICA ANS0
+    
+    
+    
+   BANKSEL		INTCON		;BANCO 1
+    BSF		INTCON,GIE	;HABILITO EL GIE
+    ;-------------CONFIG PARA TIMER-------------
+    BCF		INTCON,T0IF	    ;BORRO FLAG DE TIMER
+    BSF		INTCON,T0IE	    ;HABILITO INTERRUPCION TIMER
+    
+   BANKSEL		OPTION_REG
+    BCF		OPTION_REG,T0CS	 ;SELECCIONO TIMER POR CONTADOR DE INSTRUCCIONES
+    ;-----CONGIGURO PRESCALER----
+    BSF		OPTION_REG,PS0
+    BSF		OPTION_REG,PS1
+    BSF		OPTION_REG,PS2
+    BCF		OPTION_REG, PSA   ; asignar prescaler al TIMER0
+    BSF		OPTION_REG, INTEDG 
+    BCF		OPTION_REG,T0SE	    ;CONFIGURO  TRANSICIONES DE BAJO A ALTO
+    
+    BANKSEL		ADCON0
+    ;CONFIGURO FRECUENCIA
+    BCF		ADCON0,7		   
+    BSF		ADCON0,6
+    ;CONFIGURO CANAL USO EL CANALE 7 AHORA 0 0 0 0  = 0
+    BCF		ADCON0,5		   
+    BCF		ADCON0,4
+    BCF		ADCON0,3
+    BCF		ADCON0,2
+    ;CONFIGURO ADON ENCENDER ADC..--- 
+   BSF		ADCON0,0
+    
+    BANKSEL		ADCON1
+    ;JUSTIFICO
+    BCF		ADCON1,7
+    ;VOLTAJE
+    BCF		ADCON1,5
+    BCF		ADCON0,4
+    
+    
+    
+    BANKSEL		PORTA
+   ; CLRF		PORTC
+    CLRF		PORTD
+    CLRF		PORTE
+    CLRF		PORTB
+
+    MOVLW		.13
+    MOVWF		UNIDAD
+    MOVWF   	DECENA
+    MOVWF   	CENTENA
+	
+MAIN:
+   
+    CALL		MULTIPLEXADO_DISPLAY
+    
+    GOTO		MAIN
+	
+CARGAR_DIGITOS:
+    
+    CALL DELAY_50MS
+   
+    CLRF		CENTENA
+    MOVF		DECENA, W
+    MOVWF		CENTENA
+    
+    CLRF		DECENA
+    MOVF		UNIDAD,W
+    MOVWF		DECENA
+    
+    CLRF		UNIDAD
+    MOVF		CLAVE, W
+    MOVWF		UNIDAD
+    CLRF		CLAVE
+    		
+    RETURN	
+MULTIPLEXADO_COLUMNAS:
+    MOVLW		B'00000001'
+    MOVWF		PORTB
+    CALL		FILA1
+    MOVLW		B'00000010'
+    MOVWF		PORTB
+      CALL		FILA2
+    MOVLW		B'00000100'
+    MOVWF		PORTB
+      CALL		FILA3
+    MOVLW		B'00001000'
+    MOVWF		PORTB
+    CALL		FILA4	
+    RETURN
+MULTIPLEXADO_DISPLAY:
+    ; Mostrar UNIDAD
+    MOVLW		 b'00000001'         ; Activar display de unidad
+    MOVWF		PORTE
+    CALL		MULTIPLEXADO_COLUMNAS
+    MOVF		UNIDAD, W           ; Cargar valor de UNIDAD en W
+    CALL		TABLA
+    MOVWF		PORTD
+    CALL		DELAY_20MS
+     ; Mostrar DECENAS
+    MOVLW		b'00000010'         ; Activar display de decenas
+    MOVWF		PORTE
+   CALL		MULTIPLEXADO_COLUMNAS
+    MOVF		DECENA, W          ; Cargar valor de DECENAS en W
+    CALL		TABLA
+    MOVWF		PORTD
+    CALL		DELAY_20MS
+    ; Mostrar CENTENAS
+    MOVLW		 b'00000100'         ; Activar display de centenas
+    MOVWF		PORTE
+     CALL		MULTIPLEXADO_COLUMNAS
+    MOVF		CENTENA, W         ; Cargar valor de CENTENAS en W
+    CALL		TABLA
+    MOVWF		PORTD
+    CALL		DELAY_20MS
+
+   
+    RETURN
+
+	
+	
+     ;-----------------TECLADOO-------------
+FILA1:
+    BTFSS		PORTB,4
+    GOTO		NUM2
+    MOVLW		.0
+    MOVWF		CLAVE
+   CALL		CARGAR_DIGITOS
+    RETURN
+NUM2:
+	    BTFSS	PORTB,5
+	    GOTO	NUM3
+	    MOVLW	.1
+	    MOVWF	CLAVE
+	    CALL	CARGAR_DIGITOS
+	    RETURN		
+NUM3:
+	    BTFSS	PORTB,6
+	    GOTO	NUM4
+	    MOVLW	.2
+	    MOVWF	CLAVE
+	    CALL		CARGAR_DIGITOS
+	    RETURN
+NUM4:
+	    BTFSS	PORTB,7
+	    GOTO	FILA2
+	    MOVLW	.3
+	    MOVWF	CLAVE
+	   CALL		CARGAR_DIGITOS
+	    RETURN
+FILA2:
+    BTFSS		PORTB,4
+    GOTO		NUM6
+    MOVLW		.4
+    MOVWF		CLAVE
+    CALL		CARGAR_DIGITOS
+    RETURN
+NUM6:
+	BTFSS	PORTB,5
+	GOTO	NUM7
+	MOVLW	.5
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+NUM7:
+	BTFSS	PORTB,6
+	GOTO	NUM8
+	MOVLW	.6
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+NUM8:
+	BTFSS	PORTB,7
+	GOTO	FILA3
+	MOVLW	.7
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+FILA3:
+    BTFSS		PORTB,4
+    GOTO		NUMA
+    MOVLW		.8
+    MOVWF		CLAVE
+  CALL		CARGAR_DIGITOS
+    RETURN
+NUMA:
+	BTFSS	PORTB,5
+	GOTO	NUMB
+	MOVLW	.9
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+NUMB:
+	BTFSS	PORTB,6
+	GOTO	NUMC
+	MOVLW	.10
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+NUMC:
+	BTFSS	PORTB,7
+	GOTO	FILA4
+	MOVLW	.11
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+FILA4:
+    BTFSS		PORTB,4
+    GOTO		NUME
+    MOVLW		.12
+    MOVWF		CLAVE
+   CALL		CARGAR_DIGITOS
+    RETURN
+NUME:
+	BTFSS	PORTB,5
+	GOTO	NUMF
+	MOVLW	.13
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+NUMF:
+	BTFSS	PORTB,6
+	GOTO	NUM0
+	MOVLW	.14
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+NUM0:
+	BTFSS	PORTB,7
+	RETURN
+	MOVLW	.15
+	MOVWF	CLAVE
+	CALL		CARGAR_DIGITOS
+	RETURN
+
+
+TABLA:
+    ADDWF		PCL,F
+    
+      RETLW		0x30;1
+    RETLW		0x6D;2
+    RETLW		0x79;3
+    RETLW		B'1111101'
+   
+    RETLW		0x33;4
+    RETLW		 0x5B;5
+    RETLW		0x5F;6
+    RETLW		B'0011111'
+    
+    RETLW		0x70 ;7
+    RETLW		 0x7F ;8
+    RETLW		 0x73;9
+     RETLW		B'1001110'
+     
+    RETLW		B'0111101'
+    RETLW		B'1111110'
+    RETLW		B'1001111'
+    RETLW		B'1000111'
+DELAY_20MS:
+    MOVLW		.50			; Ajustar COUNT1 para lograr 20 ms
+    MOVWF		COUNT1
+P1:
+    MOVLW		.50				; COUNT2 sigue en 50
+    MOVWF		COUNT2
+P2:
+    DECFSZ		COUNT2, F				; Reducir COUNT2 hasta cero
+    GOTO		P2
+    DECFSZ		COUNT1, F				; Reducir COUNT1 hasta cero
+    GOTO		P1
+    RETURN
+	
+	
+DELAY_50MS:   
+    MOVLW		  .250            ; Ajustar COUNT1 para lograr 1 segundo
+    MOVWF		 COUNT1          ; Carga COUNT1 con el valor inicial
+D1:
+    MOVLW		   .250            ; Ajustar COUNT2, controla ciclos internos
+    MOVWF		COUNT2          ; Carga COUNT2 con el valor inicial
+D2:
+    DECFSZ		COUNT2, F       ; Reducir COUNT2 hasta cero
+    GOTO		D2
+    DECFSZ		COUNT1, F       ; Reducir COUNT1 hasta cero
+    GOTO		D1
+    RETURN
+    
+    
+    
+    
+        
+INTERRUPCION:
+      ; ----------------------GUARDO CONTEXTO-------------------------
+    MOVWF		DOBLEV
+    SWAPF		STATUS,W
+    MOVWF		ESTADO
+    ;------------------------;ANTIREBOTE
+    ;----LOGICA INTERRUPCION-----------
+    CALL		CARGO_ADC
+    CALL		CARGO_LEDS
+    ;----------------CARGO CONTEXTO-----------
+CONTEXTO:
+   BCF		INTCON,T0IF	    ;BORRO FLAG DE TIMER
+   
+    SWAPF		ESTADO,W
+    MOVWF		STATUS
+    SWAPF		DOBLEV,1
+    SWAPF		DOBLEV,0
+    ;---------------.VUELVO------------------
+    RETFIE
+CARGO_LEDS:
+    ;CLRF    PORTA            ; Limpia `PORTB` antes de asignar valores
+
+    MOVLW		.32              
+    SUBWF		ADRESH, W
+    BTFSS		STATUS, C       
+    GOTO		LED1
+
+    MOVLW		 .64              
+    SUBWF		ADRESH, W
+    BTFSS		STATUS, C
+    GOTO		LED2
+
+    MOVLW		.96              
+    SUBWF		ADRESH, W
+    BTFSS		STATUS, C
+    GOTO		 LED3
+
+    MOVLW		.128              
+    SUBWF		ADRESH, W
+    BTFSS		STATUS, C
+    GOTO		LED4
+
+    MOVLW		.160              
+    SUBWF		ADRESH, W
+    BTFSS		STATUS, C
+    GOTO		LED5
+
+    MOVLW		.192              
+    SUBWF		ADRESH, W
+    BTFSS		STATUS, C
+    GOTO		 LED6
+
+    MOVLW		 .224              
+    SUBWF		ADRESH, W
+    BTFSS		STATUS, C
+    GOTO		LED7
+
+    MOVLW		 .255              
+    SUBWF		ADRESH, W
+    BTFSS		STATUS, C
+    GOTO		 LED8
+
+    RETURN                   
+
+LED1:
+    MOVLW		 b'00000001'      
+    MOVWF		PORTC
+    RETURN
+
+LED2:
+    MOVLW		b'00000011'
+    MOVWF		PORTC
+    RETURN
+
+LED3:
+    MOVLW		b'00000111'
+    MOVWF		PORTC
+    RETURN
+
+LED4:
+    MOVLW		b'00001111'
+    MOVWF		PORTC
+    RETURN
+
+LED5:
+    MOVLW		b'00011111'
+    MOVWF		PORTC
+    RETURN
+
+LED6:
+    MOVLW		b'00111111'
+    MOVWF		PORTC
+    RETURN
+
+LED7:
+    MOVLW		b'01111111'
+    MOVWF		PORTC
+    RETURN
+
+LED8:
+    MOVLW		b'11111111'
+    MOVWF		PORTC
+    RETURN
+
+CARGO_ADC:
+    BANKSEL		ADCON0
+    BSF		ADCON0,GO		;HABILITO EL ADC INICIALIZA
+    ;ESPERO QUE CONVIERTA
+ESPERO:
+    BTFSC		ADCON0, GO     
+    GOTO		ESPERO
+    BANKSEL		ADRESH		;OBTENGO  PARTE ALTA DE ADC
+    MOVF		ADRESH, W     
+    BANKSEL		PORTA
+    RETURN
+    
+
+
+    
+    
+    
+    
+    END

@@ -1,0 +1,4 @@
+Warning[205] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\MAXI.X\MAXIA.ASM 1 : Found directive in column 1. (LIST)
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\MAXI.X\MAXIA.ASM 50 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\MAXI.X\MAXIA.ASM 51 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\MAXI.X\MAXIA.ASM 53 : Register in operand not in bank 0.  Ensure that bank bits are correct.

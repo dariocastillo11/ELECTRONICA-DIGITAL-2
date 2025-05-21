@@ -1,0 +1,117 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Tue May 20 15:52:07 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000002
+                   .org_2       code   0x000005    program   0x00026e
+.config_2007_BUILD/DEFAULT/PRODUCTION/TECLADO       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x00013b      
+                            0x002007    0x002007      
+            316 out of 8455 program addresses used, program memory utilization is 3%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+           CARGAR_DIGITOS   0x00003b    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                CARGO_ADC   0x000131    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+               CARGO_LEDS   0x0000f8    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                 CONTEXTO   0x0000f2    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                       D1   0x0000e6    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                       D2   0x0000e8    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+               DELAY_20MS   0x0000db    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+               DELAY_50MS   0x0000e4    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                   ESPERO   0x000134    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    FILA1   0x00006a    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    FILA2   0x000082    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    FILA3   0x00009a    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    FILA4   0x0000b2    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+             INTERRUPCION   0x0000ed    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED1   0x000119    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED2   0x00011c    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED3   0x00011f    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED4   0x000122    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED5   0x000125    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED6   0x000128    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED7   0x00012b    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED8   0x00012e    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     MAIN   0x000039    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+    MULTIPLEXADO_COLUMNAS   0x000047    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+     MULTIPLEXADO_DISPLAY   0x000054    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM0   0x0000c4    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM2   0x000070    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM3   0x000076    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM4   0x00007c    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM6   0x000088    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM7   0x00008e    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM8   0x000094    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUMA   0x0000a0    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUMB   0x0000a6    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUMC   0x0000ac    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUME   0x0000b8    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUMF   0x0000be    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                       P1   0x0000dd    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                       P2   0x0000df    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    START   0x000005    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    TABLA   0x0000ca    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    START   0x000005    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     MAIN   0x000039    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+           CARGAR_DIGITOS   0x00003b    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+    MULTIPLEXADO_COLUMNAS   0x000047    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+     MULTIPLEXADO_DISPLAY   0x000054    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    FILA1   0x00006a    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM2   0x000070    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM3   0x000076    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM4   0x00007c    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    FILA2   0x000082    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM6   0x000088    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM7   0x00008e    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM8   0x000094    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    FILA3   0x00009a    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUMA   0x0000a0    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUMB   0x0000a6    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUMC   0x0000ac    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    FILA4   0x0000b2    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUME   0x0000b8    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUMF   0x0000be    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     NUM0   0x0000c4    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                    TABLA   0x0000ca    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+               DELAY_20MS   0x0000db    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                       P1   0x0000dd    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                       P2   0x0000df    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+               DELAY_50MS   0x0000e4    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                       D1   0x0000e6    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                       D2   0x0000e8    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+             INTERRUPCION   0x0000ed    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                 CONTEXTO   0x0000f2    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+               CARGO_LEDS   0x0000f8    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED1   0x000119    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED2   0x00011c    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED3   0x00011f    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED4   0x000122    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED5   0x000125    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED6   0x000128    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED7   0x00012b    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                     LED8   0x00012e    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                CARGO_ADC   0x000131    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+                   ESPERO   0x000134    program     static C:\Users\dario\OneDrive\Desktop\digital 2\tecladointerrupcionmu.X\tecladointerrupcionmul.asm
+
+

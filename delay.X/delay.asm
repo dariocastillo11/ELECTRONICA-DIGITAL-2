@@ -1,0 +1,22 @@
+    LIST P=16F887			
+    #include "p16f887.inc"			
+    __CONFIG _CONFIG1, _FOSC_INTRC_NOCLKOUT & _WDTE_OFF & _MCLRE_ON & _LVP_OFF
+CONT EQU 0x20
+CONT2 EQU 0x21
+;** Inicio del Micro **
+    ORG	0x00
+    MOVLW .250
+    MOVWF CONT2
+    MOVWF CONT
+DELAY_1S:
+    CALL DELAY_1MS; tarda 1ms
+    DECFSZ CONT2,1
+    GOTO DELAY_1S
+    GOTO $
+DELAY_1MS:
+    NOP
+    DECFSZ  CONT,1
+    GOTO DELAY_1MS
+    RETURN
+   
+    end

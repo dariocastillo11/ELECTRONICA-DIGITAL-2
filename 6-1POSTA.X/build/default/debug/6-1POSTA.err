@@ -1,0 +1,14 @@
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 4 : Found label after column 1. (COUNT1)
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 5 : Found label after column 1. (COUNT2)
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 6 : Found label after column 1. (CLAVE)
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 7 : Found label after column 1. (RESULTADO)
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 18 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 19 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 21 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 54 : Found label after column 1. (NUM2)
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 60 : Found label after column 1. (NUM3)
+Warning[207] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 66 : Found label after column 1. (NUM4)
+Message[305] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 152 : Using default destination of 1 (file).
+Message[305] C:\USERS\DARIO\ONEDRIVE\DESKTOP\DIGITAL 2\6-1POSTA.X\6-1POSTA.ASM 154 : Using default destination of 1 (file).

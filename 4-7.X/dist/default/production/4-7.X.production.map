@@ -1,0 +1,60 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Fri Apr 25 01:13:46 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000005    program   0x0000b0
+.config_2007_BUILD/DEFAULT/PRODUCTION/4-7.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000005    0x00005c      
+                            0x002007    0x002007      
+            92 out of 8455 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              CARGAR_NUMS   0x000038    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                      DEL   0x000054    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                    DELAY   0x00004b    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                       L1   0x00004d    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                       L2   0x00004f    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                     LOOP   0x000033    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                       P1   0x000056    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                       P2   0x000058    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                    PAUSA   0x000043    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                    RESET   0x00003e    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                    START   0x000005    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+             _.org_1_0047   0x000047    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+             _.org_1_0049   0x000049    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    START   0x000005    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                     LOOP   0x000033    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+              CARGAR_NUMS   0x000038    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                    RESET   0x00003e    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                    PAUSA   0x000043    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+             _.org_1_0047   0x000047    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+             _.org_1_0049   0x000049    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                    DELAY   0x00004b    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                       L1   0x00004d    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                       L2   0x00004f    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                      DEL   0x000054    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                       P1   0x000056    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+                       P2   0x000058    program     static C:\Users\dario\OneDrive\Desktop\digital 2\4-7.X\4-7.asm
+
+
